@@ -96,7 +96,7 @@ python app/chunker.py
 
 This splits your novel into chapters, cleans text, and prepares chunks.
 
----
+
 
 ### Step 2: Generate Embeddings
 
@@ -106,7 +106,6 @@ python app/embed.py
 
 This creates semantic embeddings for each chunk and saves them to disk.
 
----
 
 ### Step 3: Build FAISS Index
 
@@ -116,7 +115,7 @@ python app/build_faiss.py
 
 This builds the FAISS vector index to enable fast search.
 
----
+
 
 ### Step 4: Ask Questions
 
