@@ -1,8 +1,4 @@
-Sure! Here's your complete `README.md` **in a single code block**, ready to copy and use:
 
----
-
-```markdown
 # 📚 NovelRAG: QA System for Long Novels using Retrieval-Augmented Generation
 
 A semantic search and question-answering tool built for novels with 2000+ chapters. This project uses **FAISS** for vector search and **OpenAI GPT** (or other LLMs) to answer questions using relevant content from your novel.
@@ -11,11 +7,18 @@ A semantic search and question-answering tool built for novels with 2000+ chapte
 
 ## 🛠 Features
 
-- 📖 Process and index thousands of novel chapters
-- 🔍 Search relevant content using semantic similarity
-- 💬 Ask natural language questions about the story
-- 🧠 Uses OpenAI for intelligent, context-based answers
-- ⚡ Fast local search using FAISS (CPU or GPU)
+  - 📖 Process and index thousands of novel chapters
+  - 🔍 Search relevant content using semantic similarity
+  - 💬 Ask natural language questions about the story
+  - 🧠 Uses OpenAI for intelligent, context-based answers
+  - ⚡ Fast local search using FAISS (CPU or GPU)
+
+---
+## 🔧 Tools Used
+  - Python 3.10 – 3.11 (⚠️ not 3.13)
+  - GPU: RTX 3070 Ti
+  - torch, sentence-transformers, faiss-cpu
+  - Optional: OpenAI API (for answers)
 
 ---
 
@@ -49,7 +52,7 @@ cd novel-rag
 
 ### 2. Install Python 3.10–3.11
 
-⚠️ **Python 3.13 is not compatible with many packages (like `torch` and `faiss`)**
+⚠️ **The Latest Release: Python 3.13 is not compatible with many packages (like `torch` and `faiss`)**
 
 > Use [pyenv](https://github.com/pyenv/pyenv) or install manually from https://www.python.org/
 
@@ -64,6 +67,8 @@ If using GPU:
 - Install PyTorch with CUDA from https://pytorch.org/get-started/locally/
 - GPU FAISS (if compatible): `pip install faiss-gpu`
 - Or CPU FAISS: `pip install faiss-cpu`
+  
+⚠️ **If you using windows, it is recommended to use cpu for FAISS, because the GPU setup is more complicated**
 
 ---
 
