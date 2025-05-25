@@ -48,10 +48,7 @@ The project is organized as follows:
 ## Configuration
     - Adjust chunk size and overlap in `chunker.py`.
     - Change embedding model in `embed_faiss.py` and QA scripts.
-    ```sh
-    export OPENAI_API_KEY=your-key
-    python app/qa_openai.py
-    ```
+
     
 ## Notes
         Requires a CUDA-capable GPU for embedding and LLM inference.
