@@ -158,6 +158,6 @@ MIT License — you are free to use, modify, and distribute.
 ## 🙏 Acknowledgments
 
 - Created by **Yudantara**  
-- Special Thanks to the [Overgeared](https://www.wuxiaworld.com/novel/overgeared) novel universe with Park Saenal (박새날) as author and an amazing translation by rainbowturtle 🤝
 - Powered by OpenAI & FAISS.
+- Special Thanks to the [Overgeared](https://www.wuxiaworld.com/novel/overgeared) novel universe with Park Saenal (박새날) as author and an amazing translation by rainbowturtle ❤️
 
