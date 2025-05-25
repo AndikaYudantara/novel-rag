@@ -1,65 +1,170 @@
-# Novel-RAG
+Sure! Here's your complete `README.md` **in a single code block**, ready to copy and use:
 
-A Retrieval-Augmented Generation (RAG) pipeline for question answering over long-form novel text using chunking, embedding, FAISS vector search, and LLMs (e.g., OpenAI's GPT-4 or HuggingFace's Flan-T5).
+---
 
-## Features
+```markdown
+# 📚 NovelRAG: QA System for Long Novels using Retrieval-Augmented Generation
 
-- **Text Chunking:** Splits large novel files into overlapping, context-preserving chunks.
-- **Embedding:** Uses Sentence Transformers to embed text chunks.
-- **FAISS Indexing:** Stores embeddings for fast similarity search.
-- **Question Answering:** Retrieves relevant chunks and generates answers using an LLM (OpenAI or HuggingFace).
-- **Modular:** Easily switch between OpenAI and open-source LLMs.
+A semantic search and question-answering tool built for novels with 2000+ chapters. This project uses **FAISS** for vector search and **OpenAI GPT** (or other LLMs) to answer questions using relevant content from your novel.
 
-## Project Structure
+---
 
-The project is organized as follows:
+## 🛠 Features
 
-- `data/`: Directory to store your novel `.txt` files.
-- `app/chunker.py`: Script to split large text files into chunks.
-- `app/embed_faiss.py`: Script to generate embeddings and create a FAISS index.
-- `app/qa_openai.py`: Script to perform question answering using OpenAI's API.
-- `requirements.txt`: File listing the Python dependencies for the project.
+- 📖 Process and index thousands of novel chapters
+- 🔍 Search relevant content using semantic similarity
+- 💬 Ask natural language questions about the story
+- 🧠 Uses OpenAI for intelligent, context-based answers
+- ⚡ Fast local search using FAISS (CPU or GPU)
 
-## Setup
+---
 
-1. **Install dependencies:**
-   ```sh
-   pip install -r requirements.txt
-   ```
+## 📁 Project Structure
 
-2. **Prepare data:**
+```
+novel-rag/
+├── app/
+│   ├── chunker.py          # Splits novel into clean chapters
+│   ├── embed.py            # Embeds chunks using SentenceTransformer
+│   ├── build_faiss.py      # Creates and saves FAISS index
+│   ├── qa_openai.py        # Question-answering pipeline using OpenAI
+│   └── utils.py            # Helper functions
+├── data/                   # Raw novel .txt files
+├── embeddings/             # Saved FAISS index and metadata
+├── .env                    # API key and config (not tracked)
+├── requirements.txt
+└── README.md
+```
 
-    Place your novel .txt files in the data/ directory.
+---
 
-3. **Chunk data:**
+## ⚙️ Setup
 
-    Run the chunker to process your novel files:
-    ```sh
-    python app/chunker.py
-    ```
+### 1. Clone the repo
 
-4. **Embed and index data:**
+```bash
+git clone https://github.com/your-username/novel-rag.git
+cd novel-rag
+```
 
-    Generate embeddings for the chunks and create a FAISS index:
-    ```sh
-    python app/embed_faiss.py
-    ```
+### 2. Install Python 3.10–3.11
 
-## Configuration
-    - Adjust chunk size and overlap in `chunker.py`.
-    - Change embedding model in `embed_faiss.py` and QA scripts.
+⚠️ **Python 3.13 is not compatible with many packages (like `torch` and `faiss`)**
 
-    
-## Notes
-        Requires a CUDA-capable GPU for embedding and LLM inference.
-        For users without GPU access, the scripts can fall back to CPU execution, though it may be slower.
-        Alternatively, consider using cloud-based services like Google Colab or AWS for GPU access.
-    
-    
-## License
+> Use [pyenv](https://github.com/pyenv/pyenv) or install manually from https://www.python.org/
 
-    This project is licensed under the MIT License. You are free to use, modify, and distribute the code, provided proper attribution is given. The software is provided "as-is" without any warranties.
-    
-    For more details, see the full license text [here](https://opensource.org/licenses/MIT).
-    License
-        MIT License
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+If using GPU:
+
+- Install PyTorch with CUDA from https://pytorch.org/get-started/locally/
+- GPU FAISS (if compatible): `pip install faiss-gpu`
+- Or CPU FAISS: `pip install faiss-cpu`
+
+---
+
+## 🔑 Environment Variables
+
+Create a `.env` file in the root folder:
+
+```env
+OPENAI_API_KEY=your_openai_key_here
+```
+
+---
+
+## 🧩 Usage Guide
+
+### Step 1: Preprocess Chapters
+
+Put your `.txt` novel files in the `data/` directory.
+
+Run:
+
+```bash
+python app/chunker.py
+```
+
+This splits your novel into chapters, cleans text, and prepares chunks.
+
+---
+
+### Step 2: Generate Embeddings
+
+```bash
+python app/embed.py
+```
+
+This creates semantic embeddings for each chunk and saves them to disk.
+
+---
+
+### Step 3: Build FAISS Index
+
+```bash
+python app/build_faiss.py
+```
+
+This builds the FAISS vector index to enable fast search.
+
+---
+
+### Step 4: Ask Questions
+
+```bash
+python app/qa_openai.py
+```
+
+Example prompt:
+
+```
+> What is the Northern End Cave and what did Grid find there?
+```
+
+You’ll get a response based on semantically relevant chunks of the novel.
+
+---
+
+## 💡 Notes
+
+- If you get a `KeyError` or `IndexError`, your FAISS index may not align with chunk metadata.
+- Output may not always show chapter titles — you can modify the QA script to include this metadata.
+
+---
+
+## 🔮 Future Ideas
+
+- [ ] Web UI using Streamlit or React
+- [ ] Display exact chapter/source info for answers
+- [ ] Replace OpenAI with local models (e.g. Mistral, Phi-2, LLaMA)
+- [ ] Multilingual input/novel support
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repo
+2. Create your feature branch (`git checkout -b feature/my-feature`)
+3. Commit your changes (`git commit -am 'Add my feature'`)
+4. Push to the branch (`git push origin feature/my-feature`)
+5. Open a pull request
+
+---
+
+## 📜 License
+
+MIT License — you are free to use, modify, and distribute.
+
+---
+
+## 🙏 Acknowledgments
+
+Created by **Yudantara**  
+Inspired by the Overgeared novel universe and powered by OpenAI & FAISS.
+```
+
+Let me know if you’d like me to generate a `requirements.txt` based on your actual working environment or help set this up as a GitHub repo.
