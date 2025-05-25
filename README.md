@@ -14,8 +14,8 @@ A semantic search and question-answering tool built for novels with 2000+ chapte
   - ⚡ Fast local search using FAISS (CPU or GPU)
 
 ---
-## 🔧 Tools Used
-  - Python 3.10 – 3.11 (⚠️ not 3.13)
+## 🔧 Tested Hardware
+  - CPU: AMD Ryzen 5 7500F
   - GPU: RTX 3070 Ti
   - torch, sentence-transformers, faiss-cpu
   - Optional: OpenAI API (for answers)
