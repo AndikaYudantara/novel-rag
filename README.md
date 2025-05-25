@@ -1,41 +1,68 @@
-# Novel Rag
+# Novel-RAG
 
-## Overview
-Novel Rag is a TypeScript-based application designed to manage and organize novel writing. It provides a structured approach to writing, allowing users to create, edit, and manage their novel projects efficiently.
+A Retrieval-Augmented Generation (RAG) pipeline for question answering over long-form novel text using chunking, embedding, FAISS vector search, and LLMs (e.g., OpenAI's GPT-4 or HuggingFace's Flan-T5).
 
 ## Features
-- TypeScript for type safety and clarity
-- Modular architecture with clear separation of concerns
-- Easy setup and configuration
 
-## Installation
-To get started with Novel Rag, follow these steps:
+- **Text Chunking:** Splits large novel files into overlapping, context-preserving chunks.
+- **Embedding:** Uses Sentence Transformers to embed text chunks.
+- **FAISS Indexing:** Stores embeddings for fast similarity search.
+- **Question Answering:** Retrieves relevant chunks and generates answers using an LLM (OpenAI or HuggingFace).
+- **Modular:** Easily switch between OpenAI and open-source LLMs.
 
-1. Clone the repository:
+## Project Structure
+
+The project is organized as follows:
+
+- `data/`: Directory to store your novel `.txt` files.
+- `app/chunker.py`: Script to split large text files into chunks.
+- `app/embed_faiss.py`: Script to generate embeddings and create a FAISS index.
+- `app/qa_openai.py`: Script to perform question answering using OpenAI's API.
+- `requirements.txt`: File listing the Python dependencies for the project.
+
+## Setup
+
+1. **Install dependencies:**
+   ```sh
+   pip install -r requirements.txt
    ```
-   git clone <repository-url>
-   ```
 
-2. Navigate to the project directory:
-   ```
-   cd novel-rag
-   ```
+2. **Prepare data:**
 
-3. Install the dependencies:
-   ```
-   npm install
-   ```
+    Place your novel .txt files in the data/ directory.
 
-## Usage
-To run the application, use the following command:
-```
-npm start
-```
+3. **Chunk data:**
 
-This will compile the TypeScript files and start the application.
+    Run the chunker to process your novel files:
+    ```sh
+    python app/chunker.py
+    ```
 
-## Contributing
-Contributions are welcome! Please feel free to submit a pull request or open an issue for any suggestions or improvements.
+4. **Embed and index data:**
 
-## License
-This project is licensed under the MIT License. See the LICENSE file for more details.
+    Generate embeddings for the chunks and create a FAISS index:
+    ```sh
+    python app/embed_faiss.py
+    ```
+
+    ### Configuration
+    - Adjust chunk size and overlap in `chunker.py`.
+    - Change embedding model in `embed_faiss.py` and QA scripts.
+    ```sh
+    export OPENAI_API_KEY=your-key
+    python app/qa_openai.py
+    ```
+    
+    ## Notes
+        Requires a CUDA-capable GPU for embedding and LLM inference.
+        For users without GPU access, the scripts can fall back to CPU execution, though it may be slower.
+        Alternatively, consider using cloud-based services like Google Colab or AWS for GPU access.
+    
+    
+    ## License
+
+    This project is licensed under the MIT License. You are free to use, modify, and distribute the code, provided proper attribution is given. The software is provided "as-is" without any warranties.
+    
+    For more details, see the full license text [here](https://opensource.org/licenses/MIT).
+    License
+        MIT License
