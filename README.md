@@ -148,17 +148,6 @@ You’ll get a response based on semantically relevant chunks of the novel.
 - [ ] Replace OpenAI with local models (e.g. Mistral, Phi-2, LLaMA)
 - [ ] Multilingual input/novel support
 
----
-
-## 🤝 Contributing
-
-1. Fork the repo
-2. Create your feature branch (`git checkout -b feature/my-feature`)
-3. Commit your changes (`git commit -am 'Add my feature'`)
-4. Push to the branch (`git push origin feature/my-feature`)
-5. Open a pull request
-
----
 
 ## 📜 License
 
@@ -169,7 +158,6 @@ MIT License — you are free to use, modify, and distribute.
 ## 🙏 Acknowledgments
 
 Created by **Yudantara**  
-Inspired by the Overgeared novel universe and powered by OpenAI & FAISS.
-```
+Special Thanks to the [Overgeared](https://www.wuxiaworld.com/novel/overgeared) novel universe with Park Saenal (박새날) as author and an amazing translation by rainbowturtle 🤝
+Powered by OpenAI & FAISS.
 
-Let me know if you’d like me to generate a `requirements.txt` based on your actual working environment or help set this up as a GitHub repo.
