@@ -45,7 +45,7 @@ The project is organized as follows:
     python app/embed_faiss.py
     ```
 
-    ### Configuration
+## Configuration
     - Adjust chunk size and overlap in `chunker.py`.
     - Change embedding model in `embed_faiss.py` and QA scripts.
     ```sh
@@ -53,13 +53,13 @@ The project is organized as follows:
     python app/qa_openai.py
     ```
     
-    ## Notes
+## Notes
         Requires a CUDA-capable GPU for embedding and LLM inference.
         For users without GPU access, the scripts can fall back to CPU execution, though it may be slower.
         Alternatively, consider using cloud-based services like Google Colab or AWS for GPU access.
     
     
-    ## License
+## License
 
     This project is licensed under the MIT License. You are free to use, modify, and distribute the code, provided proper attribution is given. The software is provided "as-is" without any warranties.
     
