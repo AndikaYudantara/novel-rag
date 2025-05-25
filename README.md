@@ -18,7 +18,7 @@ A semantic search and question-answering tool built for novels with 2000+ chapte
   - CPU: AMD Ryzen 5 7500F
   - GPU: RTX 3070 Ti
 
-⚠️ **You may using different verion of cuda if you have other GPU**
+⚠️ **You may using different version of cuda if you have other GPU**
 
 ---
 
