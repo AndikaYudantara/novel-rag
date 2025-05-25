@@ -17,8 +17,8 @@ A semantic search and question-answering tool built for novels with 2000+ chapte
 ## 🔧 Tested Hardware
   - CPU: AMD Ryzen 5 7500F
   - GPU: RTX 3070 Ti
-  - torch, sentence-transformers, faiss-cpu
-  - Optional: OpenAI API (for answers)
+
+⚠️ **You may using different verion of cuda if you have other GPU**
 
 ---
 
