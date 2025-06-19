@@ -46,7 +46,7 @@ novel-rag/
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/your-username/novel-rag.git
+git clone https://github.com/AndikaYudantara/novel-rag.git
 cd novel-rag
 ```
 
